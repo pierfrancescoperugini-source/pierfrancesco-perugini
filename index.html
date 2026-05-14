@@ -7,22 +7,42 @@
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        body { background-color: #0f172a; color: white; }
+    </style>
 </head>
 <body>
     <div id="root"></div>
-    <script type="text/babel">
-        // Definiamo useState prendendolo dall'oggetto React globale
-        const { useState } = React;
 
-        function App() {
-            // Qui puoi mettere il tuo codice React
+    <script type="text/babel">
+        // Definiamo gli strumenti di React che Claude ha usato nel tuo codice
+        const { useState, useEffect } = React;
+
+        // --- QUI INCOLLO LA LOGICA DEL TUO SITO ---
+        const App = () => {
             return (
-                <div>
-                    <h1>Benvenuto sul mio sito</h1>
-                    <p>Il sito è ora attivo!</p>
+                <div className="min-h-screen flex flex-col items-center justify-center p-4">
+                    <div className="max-w-2xl w-full bg-slate-800 rounded-xl shadow-2xl p-8 border border-slate-700">
+                        <h1 className="text-4xl font-bold mb-4 text-blue-400">Pierfrancesco Perugini</h1>
+                        <p className="text-slate-300 text-lg mb-6">
+                            Benvenuto sul mio sito personale. Se stai leggendo questo messaggio, il codice React è finalmente attivo e funzionante!
+                        </p>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="p-4 bg-slate-700 rounded-lg">
+                                <h3 className="font-bold text-white">Sviluppo Web</h3>
+                                <p className="text-sm text-slate-400">Creazione di interfacce moderne con React.</p>
+                            </div>
+                            <div className="p-4 bg-slate-700 rounded-lg">
+                                <h3 className="font-bold text-white">GitHub Pages</h3>
+                                <p className="text-sm text-slate-400">Deployment e gestione repository.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             );
-        }
+        };
 
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(<App />);
